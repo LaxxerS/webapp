@@ -36,6 +36,7 @@ class Model_user extends CI_Model {
 				'last_name' => $this->input->post('last_name'),
 				'gender' => $this->input->post('gender'),
 				'email_address' => $this->input->post('email_address'),			
+				'phone' => $this->input->post('phone'),			
 				'username' => $this->input->post('username'),
 				'password' => md5($this->input->post('password')),						
 				'password2' => md5($this->input->post('password2')),						

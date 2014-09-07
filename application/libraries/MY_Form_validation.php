@@ -36,34 +36,6 @@ class MY_Form_validation extends CI_Form_validation{
 		return true;	
 	}
 	
-	function ic_no($value){
-	
-		$this->CI->form_validation->set_message('ic_no',
-			'This %s is not ic number (hint: 123456-12-1234) ');
-			
-		if(preg_match('/^\d{6}\-\d{2}\-\d{4}$/',$value)){
-			return true	;
-		}
-		else
-		{
-			return false;
-		}
-	}
-	
-	function li_no($value){
-	
-		$this->CI->form_validation->set_message('li_no',
-			'This %s is not License number (hint: 123456) ');
-			
-		if(preg_match('/^\d{6}$/',$value)){
-			return true	;
-		}
-		else
-		{
-			return false;
-		}
-	}
-	
 	function name_space($value){
 	
 		$this->CI->form_validation->set_message('name_space',

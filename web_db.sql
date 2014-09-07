@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 06, 2014 at 06:17 PM
+-- Generation Time: Sep 07, 2014 at 07:27 AM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -37,21 +37,10 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email_address` varchar(50) NOT NULL,
   `signupdate` datetime NOT NULL,
   `accounttype` varchar(25) NOT NULL,
+  `phone` varchar(11) NOT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `gender`, `username`, `password`, `password2`, `email_address`, `signupdate`, `accounttype`) VALUES
-(1, 'aaaa', 'aaaa', 'female', 'aaaa', '07d22a19071a2b06e207dd38b246a8cb', '07d22a19071a2b06e207dd38b246a8cb', 'aa@hotmail.com', '2014-09-06 17:40:34', 'user'),
-(2, 'aaaa', 'aaaa', 'male', 'aaaaa', '87e382e5c88a9718afb3c296127d959f', '87e382e5c88a9718afb3c296127d959f', 'aa@hotmail.com', '2014-09-06 17:45:52', 'user'),
-(3, 'aaaa', 'aaaa', 'male', 'aaaaaa', '87e382e5c88a9718afb3c296127d959f', '87e382e5c88a9718afb3c296127d959f', 'aa@hotmail.com', '2014-09-06 17:46:49', 'user'),
-(4, 'aaaa', 'aaaa', 'male', 'aaaaaaa', '87e382e5c88a9718afb3c296127d959f', '87e382e5c88a9718afb3c296127d959f', 'aa@hotmail.com', '2014-09-06 17:48:15', 'user'),
-(5, 'aaaa', 'aaaa', 'male', 'aaaaaaaa', '87e382e5c88a9718afb3c296127d959f', '87e382e5c88a9718afb3c296127d959f', 'aa@hotmail.com', '2014-09-06 18:05:08', 'user'),
-(6, 'b', 'b', 'male', 'bbbb', '87e382e5c88a9718afb3c296127d959f', '87e382e5c88a9718afb3c296127d959f', 'aa@hotmail.com', '2014-09-06 00:00:00', 'user');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
