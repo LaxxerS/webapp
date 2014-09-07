@@ -30,12 +30,25 @@
 					<li><a href="#">Home</a></li>
 					<li><a href="#">Shop</a></li>
 					<li><a href="#">About</a></li>
-					<li>Account &#8897;
-						    <ul>
-						      <li><a href="<?php echo base_url(); ?>login">Sign in</a></li>
-						      <li><a href="<?php echo base_url(); ?>register">Register &raquo;</a></li>
-						    </ul>
-					</li>
+					<?php 
+						$session = $this->session->userdata("loggedIn");
+						$username = $this->session->userdata("username");
+						if(empty($session)) {
+							echo '
+								<li>Account &#8897;
+									    <ul>
+									      <li><a href="' . base_url() . 'login">Sign in</a></li>
+									      <li><a href="<?php echo base_url(); ?>register">Register &raquo;</a></li>
+									    </ul>
+								</li>
+								';							
+						} else {
+							echo '<li><a href="#">Welcome, ' . $username . '</a></li>';
+						}
+
+					?>
+					
+
 				</ul>
 			</div>
 		</nav>

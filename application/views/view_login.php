@@ -19,12 +19,11 @@
 <body class="dark">
 	<div class="login-box">
 		<?php 
-			echo form_open('/login/session', array('id' => 'login', 'role' => 'form'));
 			if($msg != NULL) 
 			{
-				echo '<strong>' . $msg . '</strong>';
+				echo '<div class="error">' . $msg . '</div>';
 			}
-			
+			echo form_open('/login', array('id' => 'login', 'role' => 'form'));
 			echo form_input(array('name' => 'username', 'value' => set_value('username'), 'placeholder' => 'Username', 'class' => 'login', 'required' => 'required', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'autofocus' => 'autofocus'));
 			echo form_password(array('name' => 'password', 'value' => set_value('password'), 'placeholder' => 'Password', 'class' => 'login', 'required' => 'required'));
 			echo form_submit(array('name' => 'submit', 'class' => 'login', 'value' => 'Login'));
