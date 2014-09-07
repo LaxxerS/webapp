@@ -1,58 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-    <title>Car</title>
-	
-	<!-- Font Awesome -->
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	
-</head>
+        <link rel="stylesheet" href="public/assets/css/normalize.css">
+        <link rel="stylesheet" href="public/assets/css/style.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+    </head>
 
 <body>
-	<div>
-		<a href='<?php echo base_url();?>'>Home</a>
-		<a href="<?php echo base_url(); ?>login">Sign in</a>
-		<a href="<?php echo base_url(); ?>register">Register an account &raquo;</a>
+
+	<div class="wrapper">
+		<header class="navbar-cart">
+			<a href="#" class="cart pull-right"><i class="fa fa-shopping-cart"></i> Cart - 0 items | $0</a>
+		</header>
+
+		<nav class="navbar-head">
+			<div class="inner-wrapper">
+				<span class="logo">Site Logo</span>
+				<ul class="pull-right">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Shop</a></li>
+					<li><a href="#">About</a></li>
+					<li>Account &#8897;
+						    <ul>
+						      <li><a href="<?php echo base_url(); ?>login">Sign in</a></li>
+						      <li><a href="<?php echo base_url(); ?>register">Register &raquo;</a></li>
+						    </ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	
+		
+		<div class="preview">
+		</div>
+
+		<footer>
+
+		</footer>
 	</div>
 
-   
-	<center>
-		<h1>Car</h1>
-		<p>Description</p>
-	</center>
-	
-	<hr>
-		<div>
-			<h2>What We Do</h2>
-			<p>Description</p>
-		</div>
-		
-		<div >
-			<h2>Contact Us</h2>
-			
-			<address>
-				<strong>Company, Inc.</strong>
-				<br>795 Folsom Ave, Suite 600
-				<br>San Francisco, CA 94107
-				<br>
-			</address>
-			
-			<address>
-				<abbr><i class="fa fa-phone"></i> </abbr>(123) 456-7890
-				<br>
-				<abbr><i class="fa fa-envelope"></i> </abbr> <a href="mailto:#">first.last@example.com</a>
-			</address>
-		</div>
-	<hr>
 
-	<footer>
-		<p>&copy; Company 2014</p>
-	</footer>
 </body>
 </html>
