@@ -134,8 +134,8 @@ hr {
 	padding: 30px;
 }
 
-input[name="text"].login,
-input[name="password"].login {
+input[type="text"].login,
+input[type="password"].login {
     border: 1px solid #1C2021;
     color: #dddddd;
 	font-family: 'Open Sans', sans-serif;
@@ -151,8 +151,8 @@ input[name="password"].login {
             transition: background-color .5s linear;   
 }
 
-input[name="text"].login:focus,
-input[name="password"].login:focus {
+input[type="text"].login:focus,
+input[type="password"].login:focus {
 	background: #666B6B;
 } 
 

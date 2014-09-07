@@ -25,7 +25,7 @@
 				echo '<strong>' . $msg . '</strong>';
 			}
 			
-			echo form_input(array('name' => 'text', 'value' => set_value('username'), 'placeholder' => 'Username', 'class' => 'login', 'required' => 'required', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'autofocus' => 'autofocus'));
+			echo form_input(array('name' => 'username', 'value' => set_value('username'), 'placeholder' => 'Username', 'class' => 'login', 'required' => 'required', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'autofocus' => 'autofocus'));
 			echo form_password(array('name' => 'password', 'value' => set_value('password'), 'placeholder' => 'Password', 'class' => 'login', 'required' => 'required'));
 			echo form_submit(array('name' => 'submit', 'class' => 'login', 'value' => 'Login'));
 			echo form_close();
