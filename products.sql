@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 09, 2014 at 10:46 AM
+-- Generation Time: Sep 09, 2014 at 04:12 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `ci_series`
+-- Database: `web_db`
 --
 
 -- --------------------------------------------------------
@@ -27,19 +27,15 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `products` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `quantity` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `price` decimal(13,2) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `option_name` varchar(255) NOT NULL,
-  `option_values` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
-
---
--- Dumping data for table `products`
---
+  `product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_quantity` int(11) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `product_cost_price` decimal(13,2) NOT NULL,
+  `product_selling_price` decimal(13,2) NOT NULL,
+  `product_image` varchar(255) NOT NULL,
+  `product_description` varchar(1000) NOT NULL,
+  PRIMARY KEY (`product_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
