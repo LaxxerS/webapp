@@ -1,24 +1,42 @@
-<div >
-	<h1>Create an Account</h1>
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+
+        <link rel="stylesheet" href="public/assets/css/normalize.css">
+        <link rel="stylesheet" href="public/assets/css/style.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+    </head>
+
+<body class="dark">
+	<a href= <?php echo base_url(); ?> class="back">&#60; BACK</span>
+	
+	<div class="register-wrap">
 		<?php 
 			if(validation_errors() != false) {
-				echo "<strong>" . validation_errors() . "</strong>";
+				echo '<div class="error">' . validation_errors() . '</div>';
 			}
 
 			if($msg != NULL) {
-				echo "<strong>" . $msg . "</strong>";
+				echo '<div class="error">' . $msg . '</div>';
 			}
 		?>
 
-	<fieldset>
-	<legend>Personal Information</legend>
+	<div class="register-personal">
+		<h2>Personal Details</h2>
 		<?php
-			echo form_open('/register/create_user', array('id' => 'personal_info', 'role' => 'form'));
-			echo form_label('First Name', 'first_name');
-			echo form_input(array('name' => 'first_name', 'value' => set_value('first_name'), 'placeholder' => 'First Name', 'required' => 'required', 'autofocus' => 'autofocus'));
+			echo form_open('/register', array('id' => 'personal_info', 'role' => 'form'));
+			echo form_input(array('name' => 'first_name', 'class'=> 'login', 'value' => set_value('first_name'), 'placeholder' => 'First Name', 'required' => 'required', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'autofocus' => 'autofocus'));
 			echo '<br>';
-			echo form_label('Last Name', 'last_name');
-			echo form_input(array('name' => 'last_name', 'value' => set_value('last_name'), 'placeholder' => 'Last Name', 'required' => 'required'));
+			echo form_input(array('name' => 'last_name', 'class'=> 'login', 'value' => set_value('last_name'), 'placeholder' => 'Last Name', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'required' => 'required'));
 			echo '<br>';
 			echo form_label('Gender', 'gender');
 			echo form_radio(array('name' => 'gender', 'value' => 'male', 'checked' => 'checked'));
@@ -26,32 +44,29 @@
 			echo form_radio(array('name' => 'gender', 'value' => 'female'));
 			echo "Female";
 			echo '<br>';
-			echo form_label('Email Address', 'email_address');
-			echo form_input(array('name' => 'email_address',  'value' => set_value('email_address'), 'placeholder' => 'abc@abc.com', 'required' => 'required'));
+			echo form_input(array('name' => 'email_address', 'class'=> 'login', 'value' => set_value('email_address'), 'placeholder' => 'Email Address', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'required' => 'required'));
 			echo '<br>';
-			echo form_label('Phone Number', 'phone');
-			echo form_input(array('name' => 'phone', 'value' => set_value('phone'), 'placeholder' => '123-1234567', 'required' => 'required'));
+			echo form_input(array('name' => 'phone', 'class'=> 'login', 'value' => set_value('phone'), 'placeholder' => 'Phone No.', 'required' => 'required'));
 			echo '<br>';
 		?>
-	</fieldset>
+	</div>
 
-	<fieldset>
-		<legend>Login Info</legend>
+	<div class="register-login">
+		<h2>Login Credentials</h2>
 		<?php
-			echo form_open('/register/create_user', array('id' => 'login_info', 'role' => 'form'));
+			echo form_open('/register', array('id' => 'login_info', 'role' => 'form'));
 			echo form_input(array('name' => 'accounttype', 'type' => 'hidden', 'value' => 'user'));
-			echo form_label('Username', 'username');
-			echo form_input(array('name' => 'username', 'value' => set_value('username'), 'placeholder' => 'aaaa', 'required' => 'required'));
+			echo form_input(array('name' => 'username', 'class'=> 'login', 'value' => set_value('username'), 'placeholder' => 'Username', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'required' => 'required'));
 			echo '<br>';
-			echo form_label('Password', 'password');
-			echo form_password(array('name' => 'password', 'value' => set_value('password'), 'placeholder' => '1!aA', 'required' => 'required'));
+			echo form_password(array('name' => 'password', 'class'=> 'login', 'value' => set_value('password'), 'placeholder' => 'Password', 'required' => 'required'));
 			echo '<br>';
-			echo form_label(' Password Confirmation', 'password2');
-			echo form_password(array('name' => 'password2', 'value' => set_value('password2'), 'placeholder' => '1!aA', 'required' => 'required'));
+			echo form_password(array('name' => 'password2', 'class'=> 'login', 'value' => set_value('password2'), 'placeholder' => 'Repeat Password', 'required' => 'required'));
 			echo '<br>';
-			echo form_submit(array('name' => 'submit', 'value' => 'Sign up'));
+			echo form_submit(array('name' => 'submit', 'class'=> 'login', 'value' => 'Sign up'));
 			echo form_close();
 		?>
-	</fieldset>
-	
-</div>
+	</div>
+	</div>
+</body>
+</html>
+

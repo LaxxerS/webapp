@@ -21,10 +21,7 @@ class Register extends CI_Controller {
 	{
 		$data['msg'] = $msg;
 		$this->load->view('view_register', $data);
-	}
 
-	function create_user()
-	{
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required|alpha');
 		$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required|name_space');
@@ -34,25 +31,30 @@ class Register extends CI_Controller {
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[32]|strong_pass[3]');
 		$this->form_validation->set_rules('password2', 'Password Confirmation', 'trim|required|matches[password]');
-		
-		if($this->form_validation->run() == FALSE)
-		{
-			$data['msg'] = NULL;
-			$this->load->view('view_register', $data);
-		}
-		else
-		{			
-			$this->load->model('model_user');
-			
-			if($query = $this->model_user->create_user())
+
+		if(isset($_POST['username'])) {
+			if($this->form_validation->run() == FALSE)
 			{
-				$this->load->view('view_r_success');
+				$data['msg'] = NULL;
+				$this->load->view('view_register', $data);
 			}
 			else
-			{
-				$msg = "Username already in use, please choose another.";
-				$this->index($msg);
+			{			
+				$this->load->model('model_user');
+				
+				if($query = $this->model_user->create_user())
+				{
+					redirect('/login');
+				}
+				else
+				{
+					$_POST = array();
+					$msg = "Username already in use, please choose another.";
+					$this->index($msg);
+				}
 			}
 		}
+		
 	}
+
 }

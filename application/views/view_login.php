@@ -17,6 +17,7 @@
     </head>
 
 <body class="dark">
+	<a href= <?php echo base_url(); ?> class="back">&#60; BACK</span>
 	<div class="login-box">
 		<?php 
 			if($msg != NULL) 

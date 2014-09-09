@@ -38,29 +38,63 @@
 								<li>Account &#8897;
 									    <ul>
 									      <li><a href="' . base_url() . 'login">Sign in</a></li>
-									      <li><a href="<?php echo base_url(); ?>register">Register &raquo;</a></li>
+									      <li><a href="' . base_url() . 'register">Register &raquo;</a></li>
 									    </ul>
 								</li>
 								';							
 						} else {
 							echo '<li><a href="#">Welcome, ' . $username . '</a></li>';
 						}
-
 					?>
-					
-
 				</ul>
 			</div>
 		</nav>
+	</div>	
 	
-		
 		<div class="preview">
 		</div>
 
-		<footer>
+		<div class="wrapper">
+			<div class="inner-wrapper">
+				<div class="tagline">
+					<h1>TRUSTED QUALITY SURPLUS</h1>
+					<p>Designed & Manufactured in Malaysia</p>
+					<br/><br/>
+					<a href="#">Find out more</a>
+					<br/><br/>
+				</div>
 
+			</div>
+		</div>
+
+		<div class="card-background">
+			<div class="wrapper max">
+				<div class="inner-wrapper light">
+				<center>	
+					<a href=<?php echo base_url() . "#"; ?> class="card">
+						<h1>SHOP</h1>
+					</a>
+					<a href=<?php echo base_url() . "#"; ?> class="card">
+						<h1>ABOUT</h1>
+					</a>
+					<a href=<?php echo base_url() . "register"; ?> class="card">
+						<h1>REGISTER</h1>
+					</a>
+				</center>
+				</div>
+			</div>
+		</div>
+
+
+		<footer class="dark">
+			<div class="foot-wrapper">
+			<a href=""><img src="public/assets/icons/fb.png" alt=""></a>
+			<a href=""><img src="public/assets/icons/tw.png" alt=""></a>
+			<a href=""><img src="public/assets/icons/g.png" alt=""></a>
+			<a href=""><img src="public/assets/icons/insta.png" alt=""></a>
+			</div>
 		</footer>
-	</div>
+	
 
 
 </body>
