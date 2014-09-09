@@ -8,9 +8,6 @@ class Login extends CI_Controller {
 			case 'index':
 				$this->index();
 				break;
-			case 'session':
-				$this->session();
-				break;
 			default:
 				show_404();;
 				break;
@@ -34,7 +31,7 @@ class Login extends CI_Controller {
 				$query = $this->model_user->validate();
 		
 				if($query) {
-					redirect('/');
+					redirect(base_url() . user);
 				} else {
 					$_POST = array();
 					$msg = "Invalid combination. <br>";
@@ -44,7 +41,10 @@ class Login extends CI_Controller {
 			}			
 		}
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8338e8adc73df7dc64c55da33e6df617f2de92cb
 }
 
 ?>
