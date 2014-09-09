@@ -38,12 +38,16 @@
 								<li>Account &#8897;
 									    <ul>
 									      <li><a href="' . base_url() . 'login">Sign in</a></li>
-									      <li><a href="<?php echo base_url(); ?>register">Register &raquo;</a></li>
+									      <li><a href="'. base_url() . 'register">Register &raquo;</a></li>
 									    </ul>
 								</li>
 								';							
 						} else {
-							echo '<li><a href="#">Welcome, ' . $username . '</a></li>';
+							echo '<li><a href="#">Welcome, ' . $username . ' &#8897</a>
+									<ul>
+									  <li><a href="'. base_url() . 'home/logout">Logout</a></li>
+									</ul>
+								  </li>';
 						}
 
 					?>

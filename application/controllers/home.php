@@ -18,13 +18,7 @@ class Home extends CI_Controller {
 	}
 	
 	public function index() {
-		$session = $this->session->userdata("loggedIn");
-		if($session) {
-			// $this->load->view('');
-			$this->load->view('view_home');
-		} else {
-			$this->load->view('view_home');
-		}	
+		$this->load->view('view_home');
 	}
 
 	public function logout() {

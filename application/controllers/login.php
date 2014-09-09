@@ -8,9 +8,6 @@ class Login extends CI_Controller {
 			case 'index':
 				$this->index();
 				break;
-			case 'session':
-				$this->session();
-				break;
 			default:
 				show_404();;
 				break;
@@ -34,7 +31,7 @@ class Login extends CI_Controller {
 				$query = $this->model_user->validate();
 		
 				if($query) {
-					redirect('/');
+					redirect(base_url() . user);
 				} else {
 					$_POST = array();
 					$msg = "Invalid combination. <br>";
@@ -45,27 +42,6 @@ class Login extends CI_Controller {
 		}
 
 		
-	}
-
-	public function session() {
-		$this->load->library('form_validation');
-		$this->form_validation->set_rules('username', 'Username', 'required|xss_clean');
-		$this->form_validation->set_rules('password', 'Password', 'required|xss_clean');
-
-		    if($this->form_validation->run() == FALSE) {
-		        $msg = validation_errors();
-		        $this->index($msg);
-		    } else {
-		        $this->load->model('model_user');
-		        $query = $this->model_user->validate();
-
-		    	if($query) {
-		        	// redirect(base_url() . "");	coming soon
-		    	} else {
-		        	$msg = "Invalid combination. <br>";
-		        	$this->index($msg);
-		    	}
-		    }
 	}
 }
 
