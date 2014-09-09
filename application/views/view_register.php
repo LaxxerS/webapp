@@ -17,7 +17,7 @@
     </head>
 
 <body class="dark">
-	<a href= <?php echo base_url(); ?> class="back">&#60; BACK</span>
+	<a href= <?php echo base_url(); ?> class="back">&#60; BACK</a>
 	
 	<div class="register-wrap">
 		<?php 
