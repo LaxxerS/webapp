@@ -38,12 +38,12 @@
 			echo '<br>';
 			echo form_input(array('name' => 'last_name', 'class'=> 'login', 'value' => set_value('last_name'), 'placeholder' => 'Last Name', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'required' => 'required'));
 			echo '<br>';
-			echo form_label('Gender', 'gender');
-			echo form_radio(array('name' => 'gender', 'value' => 'male', 'checked' => 'checked'));
-			echo "Male";
-			echo form_radio(array('name' => 'gender', 'value' => 'female'));
-			echo "Female";
-			echo '<br>';
+			// echo form_label('Gender', 'gender');
+			// echo form_radio(array('name' => 'gender', 'value' => 'male', 'checked' => 'checked'));
+			// echo "Male";
+			// echo form_radio(array('name' => 'gender', 'value' => 'female'));
+			// echo "Female";
+			// echo '<br>';
 			echo form_input(array('name' => 'email_address', 'class'=> 'login', 'value' => set_value('email_address'), 'placeholder' => 'Email Address', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'required' => 'required'));
 			echo '<br>';
 			echo form_input(array('name' => 'phone', 'class'=> 'login', 'value' => set_value('phone'), 'placeholder' => 'Phone No.', 'required' => 'required'));

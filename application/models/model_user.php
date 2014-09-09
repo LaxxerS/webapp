@@ -34,7 +34,7 @@ class Model_user extends CI_Model {
 			$new_member_insert_data = array(
 				'first_name' => $this->input->post('first_name'),
 				'last_name' => $this->input->post('last_name'),
-				'gender' => $this->input->post('gender'),
+				// 'gender' => $this->input->post('gender'),
 				'email_address' => $this->input->post('email_address'),			
 				'phone' => $this->input->post('phone'),			
 				'username' => $this->input->post('username'),
