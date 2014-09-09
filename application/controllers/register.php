@@ -25,7 +25,7 @@ class Register extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required|alpha');
 		$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required|name_space');
-		$this->form_validation->set_rules('gender', 'Gender', 'trim|required');
+		// $this->form_validation->set_rules('gender', 'Gender', 'trim|required');
 		$this->form_validation->set_rules('email_address', 'Email Address', 'trim|required|valid_email');
 		$this->form_validation->set_rules('phone', 'Phone Number', 'trim|required|phone');
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]');
