@@ -1,3 +1,42 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+
+        <link rel="stylesheet" href="public/assets/css/normalize.css">
+        <link rel="stylesheet" href="public/assets/css/admin-ui.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+    </head>
+
+    <nav class="sidebar-outer">
+    	<ul>
+    		<li><a href="#"><i class="fa fa-home fa-2x"></i></a>
+    		<li><a href="#"><i class="fa fa-line-chart fa-2x"></i></a>
+    		<li><a href="#"><i class="fa fa-shopping-cart fa-2x"></i></li></a>
+    		<li><a href="#"><i class="fa fa-usd fa-2x"></i></li></a>
+    		<li><a href="#"><i class="fa fa-sign-out fa-2x"></i></li></a>
+    	</ul>
+    </nav>
+
+    <nav class="sidebar-inner">
+    	<h3>Settings</h3>
+    	<p>Settings allows you to adjust the overall settings for your website.</p>
+    	<ul>
+    		<li><i class="fa fa-paw fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Products</li>
+    		<li><i class="fa fa-paw fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Products</li>
+    		<li><i class="fa fa-paw fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Products</li>
+    		<li><i class="fa fa-paw fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Products</li>
+    	</ul>
+
+    </nav>
 <div >
 	<h1>Add Product</h1>
 		<?php 
@@ -68,3 +107,7 @@ echo anchor('admin/saleSummary', 'Sale'). "<br>";
 echo anchor('home/logout', 'Logout');
 
 ?>
+
+</body>
+</html>
+

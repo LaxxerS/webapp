@@ -118,9 +118,11 @@ hr {
 
 .preview {
 	height: 500px;
-	overflow: hidden;
-	background: url(http://static.squarespace.com/static/5093f258e4b0979eac7cb197/t/5151e3bbe4b003030031f819/1364321212063/rocks.jpg?format=1500w) no-repeat center center fixed; 
-	background-size: cover;
+	background: url(../images/preview.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	   -moz-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
 }
 
 .tagline {
