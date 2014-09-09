@@ -61,6 +61,10 @@
 <?php
 
 
+echo anchor('admin/viewProduct', 'View') . "<br>";
+
+echo anchor('admin/saleSummary', 'Sale'). "<br>";
+
 echo anchor('home/logout', 'Logout');
 
 ?>
