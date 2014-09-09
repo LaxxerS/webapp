@@ -46,7 +46,7 @@
 			// echo '<br>';
 			echo form_input(array('name' => 'email_address', 'class'=> 'login', 'value' => set_value('email_address'), 'placeholder' => 'Email Address', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'required' => 'required'));
 			echo '<br>';
-			echo form_input(array('name' => 'phone', 'class'=> 'login', 'value' => set_value('phone'), 'placeholder' => 'Phone No.', 'required' => 'required'));
+			echo form_input(array('name' => 'phone', 'class'=> 'login', 'value' => set_value('phone'), 'placeholder' => 'Phone No.', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'required' => 'required'));
 			echo '<br>';
 		?>
 	</div>
