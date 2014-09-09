@@ -1,6 +1,6 @@
 <?php 
 
-class User extends CI_Controller {
+class Admin extends CI_Controller {
 	
 	public function _remap($method, $params = array())
 	{

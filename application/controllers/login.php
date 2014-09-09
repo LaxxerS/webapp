@@ -31,7 +31,7 @@ class Login extends CI_Controller {
 				$query = $this->model_user->validate();
 		
 				if($query) {
-					redirect(base_url() . user);
+					redirect(base_url() . admin);
 				} else {
 					$_POST = array();
 					$msg = "Invalid combination. <br>";

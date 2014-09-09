@@ -13,7 +13,7 @@
 	<fieldset>
 	<legend>Product Details</legend>
 		<?php		
-			echo form_open_multipart('user/addProduct', array('id' => 'product_details', 'role' => 'form'));
+			echo form_open_multipart('admin/addProduct', array('id' => 'product_details', 'role' => 'form'));
 			// picture
 			$next = $this->db->query("SHOW TABLE STATUS LIKE 'products'");
 			$next = $next->row(0);
