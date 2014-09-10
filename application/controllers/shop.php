@@ -15,18 +15,25 @@ class Shop extends CI_Controller {
 		
 		$product = $this->model_product->get($this->input->post('product_id'));
 		
-		// $this->model_product->update($this->input->post('quantity'),$this->input->post('product_id'));
+		echo $this->input->post('product_id') . "<br>";
+		echo $this->input->post('quantity'). "<br>";
+		echo $product->product_price. "<br>";
+		echo $product->product_name. "<br>";
 		
-		$insert = array(
-			'id' => $this->input->post('product_id'),
-			'qty' => $this->input->post('quantity'),
-			'price' => $product->product_price,
-			'name' => $product->product_name
-		);
+		// $insert = array(
+			// 'id' => $this->input->post('product_id'),
+			// 'qty' => $this->input->post('quantity'),
+			// 'price' => $product->product_price,
+			// 'name' => $product->product_name
+		// );
 		
-		$this->cart->insert($insert);
+		// $this->cart->insert($insert);
 		
-		redirect('shop');
+		// $cart = $this->cart->contents();
+		// echo "<pre>";
+		// print_r($cart);
+		
+		// redirect('shop');
 		
 	}
 	
