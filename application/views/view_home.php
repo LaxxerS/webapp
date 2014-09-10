@@ -32,7 +32,7 @@
 
 		<nav class="navbar-head">
 			<div class="inner-wrapper">
-				<span class="logo">Site Logo</span>
+				<a href="<?php echo base_url(); ?>" class="logo">E-Commerce</a>
 				<ul class="pull-right">
 					<a href="<?php echo base_url(); ?>"><li>Home</li></a>
 					<a href="<?php echo base_url() . "shop"; ?>"><li>Shop</li></a>
@@ -40,6 +40,7 @@
 					<?php 
 						$session = $this->session->userdata("loggedIn");
 						$username = $this->session->userdata("username");
+						$account = $this->session->userdata("admin");
 						if(empty($session)) {
 							echo '
 								<li>Account &#8897;
@@ -50,11 +51,21 @@
 								</li>
 								';							
 						} else {
-							echo '<li><a href="#">Welcome, ' . $username . ' &#8897</a>
+							if($account == 'admin') {
+								echo '<li><a href="#">Welcome, ' . $username . ' &#8897</a>
 									<ul>
-									  <a href="'. base_url() . 'home/logout"><li>Logout</li></a>
+										<a href="'. base_url() . 'admin"><li>Admin</li></a>
+									    <a href="'. base_url() . 'home/logout"><li>Logout</li></a>
 									</ul>
 								  </li>';
+							} else {
+								echo '<li><a href="#">Welcome, ' . $username . ' &#8897</a>
+									<ul>
+									    <a href="'. base_url() . 'home/logout"><li>Logout</li></a>
+									</ul>
+								  </li>';								
+							}
+
 						}
 					?>
 				</ul>

@@ -12,6 +12,7 @@ class Model_user extends CI_Model {
 					'user_id' => $row->user_id,
 					'username' => $row->username,
 					'password' => $row->password,
+					'admin' => $row->accounttype,
 					'loggedIn' => true
 					);
 			$this->session->set_userdata($data);

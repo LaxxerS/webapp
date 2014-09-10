@@ -26,7 +26,7 @@
 
 		<nav class="navbar-head">
 			<div class="inner-wrapper">
-				<span class="logo">Site Logo</span>
+				<a href="<?php echo base_url(); ?>" class="logo">E-Commerce</a>
 				<ul class="pull-right">
 					<a href="<?php echo base_url(); ?>"><li>Home</li></a>
 					<a href="<?php echo base_url() . "shop"; ?>"><li>Shop</li></a>

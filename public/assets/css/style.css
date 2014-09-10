@@ -49,6 +49,8 @@ hr {
 	text-transform: uppercase;
 	font-size: 25px;
 	letter-spacing: 2px;
+	text-decoration: none;
+	color: black;
 }
 
  .navbar-head ul {
