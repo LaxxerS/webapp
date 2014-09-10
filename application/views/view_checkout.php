@@ -33,23 +33,24 @@
 
 					$sql = mysql_query("SELECT * FROM users WHERE username='$username'");
 					
-					// if($sql === FALSE) {
-						// die(mysql_error()); 
-					// }
+					if($sql === FALSE) {
+						die(mysql_error()); 
+					}
 					
 					while($row = mysql_fetch_array($sql))
 					{
 						echo $first_name = $row["first_name"];
+						echo $last_name = $row["last_name"];
+						echo $email = $row["email_address"];
 					}
-
+					// echo $first_name;
 				?>
 				
-				<?php echo $first_name;?>
                 <form action="#">
-                <input type="text" placeholder="First Name" class="checkout" value="111"/>
-                <input type="text" placeholder="Last Name" class="checkout" value="111"/>
-                <input type="email" placeholder="Email" class="checkout" value="111"/>
-                <input type="text" placeholder="Address" class="checkout" value="111"/>
+                <input type="text" placeholder="First Name" class="checkout" value=""/>
+                <input type="text" placeholder="Last Name" class="checkout" value=""/>
+                <input type="email" placeholder="Email" class="checkout" value=""/>
+                <input type="text" placeholder="Address" class="checkout" />
                 <input type="text" placeholder="Country" class="checkout"/>
                 <input type="text" placeholder="City" class="checkout"/>
                 <input type="text" placeholder="State" class="checkout"/>
