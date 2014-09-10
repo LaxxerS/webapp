@@ -87,13 +87,12 @@
 								$product_cost_price = $row["product_cost_price"];
 							}
 							$real_cost = $item['qty'] * $product_cost_price;
+							$prouduct_cost_total = 0;
 							$prouduct_cost_total += $real_cost;
-							// echo $prouduct_cost_total;
 						?>
-						
-						<input type="hidden" name="prouduct_cost_total" class="checkout" value="<?php ?>"/>
 					</tr>
 					<?php } ?>
+					<input type="hidden" name="prouduct_cost_total" class="checkout" value="<?php $prouduct_cost_total?>"/>
 					<tr> <td colspan="4">&nbsp;</td> </tr>
 					<tr style="border-top: 1px solid #E0E0E0;"><td colspan="4">&nbsp;</td> </tr>
 					<tr>
