@@ -105,8 +105,12 @@
 								);	
 								echo form_input($name_data)  . "</li>"; 		
 								echo "</ul>";
-								echo form_hidden('product_id', $product->product_id); 
-								echo "<center>" . form_submit('action', 'Add to Cart', "class='cart'") . "</center>"; 
+								echo form_hidden('product_id', $product->product_id);
+								
+								$session = $this->session->userdata("loggedIn");
+								if(!empty($session)) {
+									echo "<center>" . form_submit('action', 'Add to Cart', "class='cart'") . "</center>"; 
+								}
 								echo form_close(); 	
 
 							?>
