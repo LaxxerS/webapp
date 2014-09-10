@@ -19,7 +19,7 @@ while($row = mysql_fetch_array($sql))
 
 ?>
  
- <div >
+<div >
 	<h1>Update Product</h1>
 		<?php 
 			if(validation_errors() != false) {
@@ -63,3 +63,7 @@ while($row = mysql_fetch_array($sql))
 	</fieldset>
 	
 </div>
+
+
+</body>
+</html>

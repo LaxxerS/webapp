@@ -1,3 +1,5 @@
+
+<div>
 <h4> Found <?php echo $product_no; ?> Products</h4>
 
 <table border="1px">
@@ -50,14 +52,7 @@
 	</tbody>
 	<?php }} ?>	
 </table>
+</div>
 
-<?php
-
-
-echo anchor('admin/addProduct', 'Dashboard') . "<br>";
-
-echo anchor('admin/saleSummary', 'Sale'). "<br>";
-
-echo anchor('home/logout', 'Logout');
-
-?>
+</body>
+</html>

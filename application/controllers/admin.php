@@ -77,7 +77,8 @@ class Admin extends CI_Controller {
 			{
 				$this->model_admin->add_product();
 				$data = array('upload_data' => $this->upload->data());
-				echo "Succesfully Added A Product";
+				echo "Succesfully Added A Product <br>";
+				echo anchor('admin', 'Back');
 			}
 			else
 			{

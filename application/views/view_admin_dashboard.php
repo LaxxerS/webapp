@@ -27,15 +27,14 @@
     </nav>
 
     <nav class="sidebar-inner">
-    	<h3>Settings</h3>
-    	<p>Settings allows you to adjust the overall settings for your website.</p>
+    	<h3>&nbsp;&nbsp;&nbsp;&nbsp;Settings</h3>
+    	<p>&nbsp;&nbsp;&nbsp;&nbsp;Settings allows you to adjust the overall &nbsp;&nbsp;&nbsp;&nbsp;settings for your website.</p>
     	<ul>
-    		<li><i class="fa fa-paw fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Products</li>
-    		<li><i class="fa fa-paw fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Products</li>
-    		<li><i class="fa fa-paw fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Products</li>
-    		<li><i class="fa fa-paw fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Products</li>
-    	</ul>
-
+    		<li><i class="fa fa-paw fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo anchor('admin', 'Add Products') ; ?></li>
+			<li><i class="fa fa-paw fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo anchor('admin/viewProduct', 'View Products');  ?></li>
+    		<li><i class="fa fa-paw fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo anchor('admin/saleSummary', 'Sale Summary');  ?></li>
+    		<li><i class="fa fa-paw fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo anchor('home/logout', 'Logout');  ?></li>
+		</ul>
     </nav>
 <div >
 	<h1>Add Product</h1>
@@ -93,20 +92,6 @@
 	</fieldset>
 	
 </div>
-
-
-
-
-<?php
-
-
-echo anchor('admin/viewProduct', 'View') . "<br>";
-
-echo anchor('admin/saleSummary', 'Sale'). "<br>";
-
-echo anchor('home/logout', 'Logout');
-
-?>
 
 </body>
 </html>
