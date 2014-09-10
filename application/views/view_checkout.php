@@ -67,7 +67,9 @@
 						<td><small>Quantity</small></td>
 						<td><small>Price</small></td>
 					</tr>
-					<?php foreach ($cart as $item){ ?>
+					
+					<?php $prouduct_cost_total = 0;
+					foreach ($cart as $item){ ?>
 					<tr>
 						<td><?php echo $item['name']; ?></td>
 						<td><?php echo $item['qty'];?></td>
@@ -87,7 +89,7 @@
 								$product_cost_price = $row["product_cost_price"];
 							}
 							$real_cost = $item['qty'] * $product_cost_price;
-							$prouduct_cost_total = 0;
+							
 							$prouduct_cost_total += $real_cost;
 						?>
 					</tr>
