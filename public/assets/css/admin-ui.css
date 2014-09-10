@@ -1,10 +1,10 @@
 body, html {
-	background: #EDECE4;
+	/*background: #EDECE4;*/
 	height: 100%;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
 	height: 100%;
-	margin-left: 16%;
+	margin-left: 14%;
 }
 
 .sidebar-outer {
@@ -28,22 +28,37 @@ body, html {
 }
 
 .sidebar-outer ul li a {
-	text-decoration: none;
 	color: #3A3A3E;
+	text-decoration: none;
+    -webkit-transition: color .5s;
+       -moz-transition: color .5s;   
+            transition: color .5s;  	
 }
 
 .sidebar-outer ul li a:hover {
-	color: #EDECE4;
+    -webkit-transition: color .5s;
+       -moz-transition: color .5s;   
+            transition: color .5s;  	
+	color: #EFEFEF;
 }
 
 .sidebar-inner {
 	position: fixed;
 	top: 0;
 	left: 6%;
-	background-color: #EDECE4;
+	background-color: #EFEFEF;
 	width: 20%;
 	height: 100%;
 	border-right: 6px solid #E0E0E0;
+}
+
+.sidebar-inner .descriptions {
+	padding: 30px 20px;
+}
+
+.title {
+	font-weight: lighter;
+	font-size: 25px;
 }
 
 .sidebar-inner ul {
@@ -52,9 +67,112 @@ body, html {
 }
 
 .sidebar-inner ul li {
-	padding: 10px;
+	font-weight: lighter;
+	font-size: 13px;
+	padding: 10px 20px;
+    -webkit-transition: background-color.5s linear;
+       -moz-transition: background-color .5s linear;   
+            transition: background-color .5s linear;  
 }
 
-.sidebar-inner ul li:hover{
+
+.sidebar-inner ul li:hover {
 	background-color: white;
+    -webkit-transition: background-color .5s linear;
+       -moz-transition: background-color .5s linear;   
+            transition: background-color .5s linear;  
+}
+
+.sidebar-inner ul a {
+	text-decoration: none;
+	color: #9898A0;
+}
+
+.sidebar-inner ul a:hover {
+	color: #1C2021;
+}
+
+.admin-contents {
+	padding: 30px 60px;
+}
+
+.admin-contents .image-preview {
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.admin-contents .product-details {
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+input[type="text"],
+textarea  {
+	border: 1px solid #E0E0E0;
+    color: #1C2021;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: lighter;
+	font-size: 14px;
+    background: white;
+    padding: 10px;
+    outline: none;
+    width: 350px;
+    margin: 5px;
+    resize: none;
+    border-radius: 2px;
+    -webkit-transition: border.5s linear;
+       -moz-transition: border .5s linear;   
+            transition: border .5s linear;   
+}
+
+input[type="text"]:focus,
+textarea:focus {
+	border: 1px solid #1C2021;
+}
+
+input[type="submit"] {
+	padding: 10px;
+	border: 1px solid #E0E0E0;
+	letter-spacing: 2px;
+	background: white;
+	color: #1C2021;
+	margin: 5px;
+	width: 140px;
+	text-transform: uppercase;
+	font-weight: lighter;
+	font-size: 13px;
+	-webkit-transition:  .2s linear;
+	   -moz-transition:  .2s linear;
+	        transition:  .2s linear;
+}
+
+input[type="submit"]:hover {
+	border: 1px solid #1C2021;
+	background: black;
+	color: white;
+	-webkit-transition:  .2s linear;
+	   -moz-transition:  .2s linear;
+	        transition:  .2s linear;
+}
+
+/* UTIL classes */
+.active {
+	color: #EFEFEF;
+}
+
+.active-inner {
+	background-color: white;
+
+	color: #1C2021;
+}
+
+.error {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: lighter;
+	font-size: 14px;
+	font-style: italic;
+	padding-left: 5px;
+	color: red;
 }

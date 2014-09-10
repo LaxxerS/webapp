@@ -37,7 +37,7 @@ class Admin extends CI_Controller {
 	public function index($msg = NULL) 
 	{
 		$data['msg'] = $msg;
-		$this->load->view('view_admin_dashboard',$data);
+		$this->load->view('view_admin_dashboard', $data);
 	}
 	
 	function error_pic($msg = NULL) {
@@ -45,6 +45,16 @@ class Admin extends CI_Controller {
 		$this->load->view('view_admin_dashboard', $data);
 	}
 	
+	public function view($msg = NULL) {
+        $data['msg'] = $msg;
+		$this->load->view('view_admin_product', $data);
+	}
+
+	public function add($msg = NULL) {
+		$data['msg'] = $msg;
+		$this->load->view('view_admin_add', $data);
+	}
+
 	public function addProduct() 
 	{
 		$this->load->library('form_validation');
@@ -57,7 +67,7 @@ class Admin extends CI_Controller {
 		if($this->form_validation->run() == FALSE)
 		{
 			$data['msg'] = NULL;
-			$this->load->view('view_admin_dashboard',$data);
+			$this->load->view('view_admin_add',$data);
 		}
 		else
 		{			
