@@ -95,7 +95,8 @@ class Shop extends CI_Controller {
 		);
 
 		$insert = $this->db->insert('checkout_info', $new_checkout_info);
-		return $insert;
+		$this->cart->destroy();
+		redirect(base_url());
 	}
 	
 	

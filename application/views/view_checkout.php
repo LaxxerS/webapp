@@ -133,8 +133,8 @@
                     <option value="cod">Cash on Delivery</option>
                 </select>       
                 <br><br>
-					<input type="submit" value="Checkout" class="checkout"></form> 
-                </center>
+					<input type="submit" value="Checkout" class="checkout">
+                </center></form> 
 
             </div>
         </div>
