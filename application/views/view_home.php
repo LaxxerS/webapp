@@ -27,9 +27,9 @@
 			<div class="inner-wrapper">
 				<span class="logo">Site Logo</span>
 				<ul class="pull-right">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Shop</a></li>
-					<li><a href="#">About</a></li>
+					<a href="#"><li>Home</li></a>
+					<a href="<?php echo base_url() . "shop"; ?>"><li>Shop</li></a>
+					<a href="#"><li>About</li></a>
 					<?php 
 						$session = $this->session->userdata("loggedIn");
 						$username = $this->session->userdata("username");
@@ -75,7 +75,7 @@
 			<div class="wrapper max">
 				<div class="inner-wrapper light">
 				<center>	
-					<a href=<?php echo base_url() . "#"; ?> class="card">
+					<a href=<?php echo base_url() . "shop"; ?> class="card">
 						<h1>SHOP</h1>
 					</a>
 					<a href=<?php echo base_url() . "#"; ?> class="card">
