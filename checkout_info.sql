@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 10, 2014 at 09:21 PM
+-- Generation Time: Sep 10, 2014 at 09:45 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `checkout_info` (
   `phone` int(11) NOT NULL,
   `shipping` varchar(255) NOT NULL,
   `prouduct_cost_total` int(11) NOT NULL,
+  `total_selling_price` int(11) NOT NULL,
   `checkout_id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`checkout_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
