@@ -91,7 +91,8 @@ class Shop extends CI_Controller {
 			'zip_postal' =>  $this->input->post('zip_postal'),			
 			'phone' =>  $this->input->post('phone'),
 			'shipping' =>  $this->input->post('shipping'),
-			'prouduct_cost_total' =>  $this->input->post('prouduct_cost_total')
+			'prouduct_cost_total' =>  $this->input->post('prouduct_cost_total'),
+			'total_selling_price' =>  $this->input->post('total_selling_price')
 		);
 
 		$insert = $this->db->insert('checkout_info', $new_checkout_info);
