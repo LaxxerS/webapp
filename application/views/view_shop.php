@@ -44,11 +44,20 @@
 								</li>
 								';							
 						} else {
-							echo '<li><a href="#">Welcome, ' . $username . ' &#8897</a>
+							if($account == 'admin') {
+								echo '<li><a href="#">Welcome, ' . $username . ' &#8897</a>
 									<ul>
-									  <a href="'. base_url() . 'home/logout"><li>Logout</li></a>
+										<a href="'. base_url() . 'admin"><li>Admin</li></a>
+									    <a href="'. base_url() . 'home/logout"><li>Logout</li></a>
 									</ul>
 								  </li>';
+							} else {
+								echo '<li><a href="#">Welcome, ' . $username . ' &#8897</a>
+									<ul>
+									    <a href="'. base_url() . 'home/logout"><li>Logout</li></a>
+									</ul>
+								  </li>';								
+							}
 						}
 					?>
 				</ul>
