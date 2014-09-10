@@ -15,12 +15,10 @@ class Shop extends CI_Controller {
 		
 		$product = $this->model_product->get($this->input->post('product_id'));
 		
-		// $this->model_product->update($this->input->post('quantity'),$this->input->post('product_id'));
-		
 		$insert = array(
 			'id' => $this->input->post('product_id'),
 			'qty' => $this->input->post('quantity'),
-			'price' => $product->product_price,
+			'price' => $product->product_selling_price,
 			'name' => $product->product_name
 		);
 		

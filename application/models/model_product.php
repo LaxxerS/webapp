@@ -14,15 +14,6 @@ class Model_product extends CI_Model {
 		$results = $this->db->get_where('products', array('product_id' => $product_id))->result();
 		$result = $results[0];
 		
-		return $results;
+		return $result;
 	}
-	
-	// function update($product_quantity, $product_id) {
-
-		// $q =  $this->db->query("UPDATE products 
-		// SET product_quantity=$product_quantity 
-		// WHERE product_id = $product_id ");
-		
-		// return $q;
-	// }
 }
