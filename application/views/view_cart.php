@@ -122,6 +122,7 @@
         <?php 
             if ($cart = $this->cart->contents()){ 
                 echo "<br><br>";
+				echo form_open('shop/checkout');
                 echo "<center>" . form_submit('action', 'CHECKOUT', "class='cart'") . "</center>"; 
             }
         ?>
