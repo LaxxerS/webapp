@@ -60,44 +60,49 @@
 
             <div class="checkout-summary">
                 <h3>Order Summary</h3>
-                <table style="width:100%">
-                    <tr style="width: 50%;">
-                        <td style="width: 50%;"><small>Item</small></td>
-                        <td><small>Quantity</small></td>
-                        <td><small>Price</small></td>
-                    </tr>
-                    <tr>
-                        <td>Wool Akaskan Shirt</td>
-                        <td>1</td>
-                        <td>$99.99</td>
-                    </tr>
-                    <tr> <td colspan="3">&nbsp;</td> </tr>
-                    <tr style="border-top: 1px solid #E0E0E0;"><td colspan="3">&nbsp;</td> </tr>
-                    <tr>
-                        <td></td>
-                        <td><small>SUBTOTAL</small></td>
-                        <td>$99.99</td>
-                    </tr>
+                <?php if ($cart = $this->cart->contents()){ ?>
+				<table style="width:100%;">
+					<tr style="width: 50%;">
+						<td style="width: 50%;"><small>Item</small></td>
+						<td><small>Quantity</small></td>
+						<td><small>Price</small></td>
+					</tr>
+					<?php foreach ($cart as $item){ ?>
+					<tr>
+						<td><?php echo $item['name']; ?></td>
+						<td><?php echo $item['qty'];?></td>
+						<td>$<?php echo $item['subtotal']; ?></td>
+					</tr>
+					<?php } ?>
+					<tr> <td colspan="4">&nbsp;</td> </tr>
+					<tr style="border-top: 1px solid #E0E0E0;"><td colspan="4">&nbsp;</td> </tr>
+					<tr>
+						<td></td>
+						<td><small>SUBTOTAL</small></td>
+						<td>$<?php echo $this->cart->total(); ?></td>
+					</tr>
 
-                    <tr>
-                        <td></td>
-                        <td><small>TAX</small></td>
-                        <td>$0.00</td>
-                    </tr>
+					<tr>
+						<td></td>
+						<td><small>TAX</small></td>
+						<td>$0.00</td>
+					</tr>
 
-                     <tr>
-                        <td></td>
-                        <td><small>SHIPPING</small></td>
-                        <td>$0.00</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #E0E0E0;"><td colspan="3">&nbsp;</td> </tr>
-                    <tr><td colspan="3">&nbsp;</td> </tr>
-                    <tr>
-                        <td></td>
-                        <td><h2>GRAND TOTAL:</h2></td>
-                        <td><h2>$99.99</h2></td>
-                    </tr>
-                </table>
+					 <tr>
+						<td></td>
+						<td><small>SHIPPING</small></td>
+						<td>$0.00</td>
+					</tr>
+					<tr style="border-bottom: 1px solid #E0E0E0;"><td colspan="4">&nbsp;</td> </tr>
+					<tr><td colspan="4">&nbsp;</td> </tr>
+					<tr>
+						<td></td>
+						<td><h2>GRAND TOTAL:</h2></td>
+						<td><h2><td>$<?php echo $this->cart->total(); ?></td></h2></td>
+					</tr>
+				</table>
+
+				<?php } ?>
             </div>
 
             <div class="checkout-shipping">
