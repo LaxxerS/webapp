@@ -75,6 +75,11 @@ hr {
 	color: #444444;
 }
 
+.navbar-head ul li a:hover li {
+	background: #0F090A; 
+	color: white;
+}
+
 .navbar-head ul li ul {
 	padding: 0;
 	position: absolute;
@@ -97,17 +102,13 @@ hr {
 	background: white;
 }
 
-.navbar-head ul li ul li:not(:first-child) {
+.navbar-head ul li ul a:not(:first-child) li {
    	border-top: none;
 }
 
 .navbar-head ul li ul li:hover { 
 	background: #0F090A; 
 	border: 1px solid #0F090A;
-}
-
-.navbar-head ul li ul li:hover a {
-	color: white;
 }
 
 .navbar-head ul li:hover ul {
