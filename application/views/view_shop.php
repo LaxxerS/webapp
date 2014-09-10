@@ -85,9 +85,9 @@
 						'name' => 'quantity',
 						'id' => 'quantity',
 						'type'=> 'number',
-						'value' => set_value('quantity','1'),
-						'min'=>'0',
-						'max'=>$product->product_quantity
+						'value' => set_value('quantity','1')
+						// 'min'=>'0',
+						// 'max'=>$product->product_quantity
 					);	
 					?>
 					<?php echo form_input($name_data); ?>
