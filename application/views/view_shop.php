@@ -61,44 +61,51 @@
 <body>
 	<div id="products">
 		<ul>
-			<?php foreach ($products as $product){ ?>
-			<li>
-				<?php echo form_open('shop/add'); ?>
-				<div class="name"><?php echo $product->product_name; ?></div>
-				
-				<div class="thumb">
-				<?php 
-					$display = base_url() . "public/product/" . $product->product_id . ".jpg";
-					echo "<img src='" . $display . "'  alt ='Product Picture' width='100'/>";
-				?>			
-				</div>
-				
-				<div class="price">Description : <?php echo $product->product_description; ?></div>
-				
-				<div class="price">Price : $<?php echo $product->product_selling_price; ?></div>
-				
-				<div class="quantities">
+			<?php 
+			$count = 0;
+			foreach ($products as $product)
+			{
+			?>
+				<li>
+					<?php echo form_open('shop/add'); ?>
+					<div class="name"><?php echo $product->product_name; ?></div>
 					
-					<?php echo form_label("Quantity") ?>
-					<?php
-					$name_data = array(
-						'name' => 'quantity',
-						'id' => 'quantity',
-						'type'=> 'number',
-						'value' => set_value('quantity','1'),
-						'min'=>'0',
-						'max'=>$product->product_quantity
-					);	
+					<div class="thumb">
+					<?php 
+						$display = base_url() . "public/product/" . $product->product_id . ".jpg";
+						echo "<img src='" . $display . "'  alt ='Product Picture' width='100'/>";
+					?>			
+					</div>
+					
+					<div class="price">Description : <?php echo $product->product_description; ?></div>
+					
+					<div class="price">Price : $<?php echo $product->product_selling_price; ?></div>
+					
+					<div class="quantities">
+						
+						<?php echo form_label("Quantity") ?>
+						<?php
+						$name_data = array(
+							'name' => 'quantity',
+							'id' => 'quantity',
+							'type'=> 'number',
+							'value' => set_value('quantity','0'),
+							'min'=>'0',
+							'max'=>'10'
+						);	
+						?>
+						<?php echo form_input($name_data); ?>
+					
+					</div>
+					
+					<?php echo form_hidden('product_id', $product->product_id); ?>
+					<?php echo form_submit('action', 'Add to Cart'); ?>
+					<?php echo form_close(); 
 					?>
-					<?php echo form_input($name_data); ?>
-				
-				</div>
-				
-				<?php echo form_hidden('product_id', $product->product_id); ?>
-				<?php echo form_submit('action', 'Add to Cart'); ?>
-				<?php echo form_close(); ?>
-			</li>
-			<?php } ?>
+				</li>
+			<?php 
+			} 
+			?>
 		</ul>
 	</div>
 
