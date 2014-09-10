@@ -39,6 +39,7 @@
                     <?php 
                         $session = $this->session->userdata("loggedIn");
                         $username = $this->session->userdata("username");
+                        $account = $this->session->userdata("admin");
                         if(empty($session)) {
                             echo '
                                 <li>Account &#8897;
