@@ -30,8 +30,8 @@ hr {
 	top: 0%;
     height: 30px;
     padding: 10px;
-    width: 160px;
-    margin-left: -85px;
+    width: 180px;
+    margin-left: -105px;
 }
 
 .navbar-cart a {
@@ -217,14 +217,10 @@ footer {
 }
 
 /* Shop*/
-.product-details {
-	width: 50%;
-	display: inline-block;
-	vertical-align: top;
-}
 
 .product-list {
 	width: 30%;
+	min-height: 400px;
 	margin: 10px;
 	display: inline-block;
 	vertical-align: top;
@@ -273,6 +269,80 @@ footer {
 	list-style: none;
 	margin: 0;
 	padding: 5px;
+}
+
+input[type="text"].cart,
+input[type="number"].cart {
+	border: 1px solid #E0E0E0;
+    color: #1C2021;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: lighter;
+	font-size: 14px;
+    background: white;
+    padding: 8px;
+    outline: none;
+    width: 230px;
+    margin: 5px;
+    resize: none;
+    border-radius: 2px;
+    -webkit-transition: border.5s linear;
+       -moz-transition: border .5s linear;   
+            transition: border .5s linear;  	
+}
+
+input[type="text"].cart:focus,
+input[type="number"].cart:focus {
+	border: 1px solid #1C2021;
+}
+
+input[type="submit"].cart {
+	padding: 10px;
+	font-family: 'Open Sans', sans-serif;	
+	border: 1px solid #E0E0E0;
+	letter-spacing: 1px;
+	background: white;
+	color: #1C2021;
+	margin: 5px;
+	width: 140px;
+	text-transform: uppercase;
+	font-weight: lighter;
+	font-size: 12px;
+	-webkit-transition:  .2s linear;
+	   -moz-transition:  .2s linear;
+	        transition:  .2s linear;
+}
+
+input[type="submit"].cart:hover {
+	border: 1px solid #1C2021;
+	background: black;
+	color: white;
+	-webkit-transition:  .2s linear;
+	   -moz-transition:  .2s linear;
+	        transition:  .2s linear;
+}
+/* Cart */
+.cart-list {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.cart-list a {
+	text-decoration: none;
+	color: black;
+	-webkit-transition:  .2s linear;
+	   -moz-transition:  .2s linear;
+	        transition:  .2s linear;
+}
+
+.cart-list a:hover {
+	-webkit-transition:  .2s linear;
+	   -moz-transition:  .2s linear;
+	        transition:  .2s linear;	
+	color: white;
+}
+
+.cart-list table {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 14px;
 }
 
 /* Login */
@@ -471,6 +541,10 @@ input[type="submit"].checkout:hover {
 /* UTIL classes */
 .dark {
 	background: #1C2021;
+}
+
+.light-font {
+	color: #EDECE4;
 }
 
 .light {

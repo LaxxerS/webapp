@@ -20,7 +20,14 @@
 
 	<div class="wrapper">
 		<header class="navbar-cart">
-			<a href="#" class="cart pull-right"><i class="fa fa-shopping-cart"></i> Cart - 0 items | $0</a>
+            <?php 
+                $total_items = $this->cart->total_items(); 
+                $total_amount = $this->cart->total();
+                if($total_items == 0) 
+                    echo '<a href="'. base_url() . 'shop/cart"  class="cart pull-right"><i class="fa fa-shopping-cart"></i> Cart - 0 items | $0</a>';
+                else
+                    echo '<a href="'. base_url() . 'shop/cart" class="cart pull-right"><i class="fa fa-shopping-cart"></i> Cart - ' . $total_items .' items | $'. $total_amount . '</a>';
+            ?>
 		</header>
 
 		<nav class="navbar-head">

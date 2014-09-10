@@ -14,7 +14,14 @@
 <body>
 	<div class="wrapper">
 		<header class="navbar-cart">
-			<a href="#" class="cart pull-right"><i class="fa fa-shopping-cart"></i> Cart - 0 items | $0</a>
+			<?php 
+				$total_items = $this->cart->total_items(); 
+				$total_amount = $this->cart->total();
+				if($total_items == 0) 
+					echo '<a href="'. base_url() . 'shop/cart" " class="cart pull-right"><i class="fa fa-shopping-cart"></i> Cart - 0 items | $0</a>';
+				else
+					echo '<a href="'. base_url() . 'shop/cart"  class="cart pull-right"><i class="fa fa-shopping-cart"></i> Cart - ' . $total_items .' items | $'. $total_amount . '</a>';
+			?>
 		</header>
 
 		<nav class="navbar-head">
@@ -49,22 +56,19 @@
 		</nav>
 	</div>	
 
-		<div class="preview">
-		</div>
-
-		<div class="wrapper">
-			<div class="inner-wrapper">
-				<div class="tagline">
-					<h1>TRUSTED QUALITY SURPLUS</h1>
-					<p>Designed & Manufactured in Malaysia</p>
-					<br/><br/>
-					<a href="#">Find out more</a>
+	<div class="dark">
+		<div class="wrapper dark">
+			<div class="inner-wrapper dark">
+				<div class="tagline light-font">
+					<h1>SHOP</h1>
+					<p>Only handcrafted & carefully-selected items are up for sales.</p>
+					<p>The level of quality will amaze you.</p>
 					<br/><br/>
 				</div>
 
 			</div>
 		</div>
-
+	</div>
 		<div class="card-background">
 			<div class="wrapper max">
 				<div class="inner-wrapper light">
@@ -86,13 +90,15 @@
 							<?php 
 								echo "<ul>";
 								echo "<center><h3>" . $product->product_name . "</h3></center><hr>"; 
-								echo "<li>" . $product->product_description . "</li>"; 
-							    echo "<li>$" . $product->product_selling_price . "</li>"; 
-								echo "<li>" . form_label("Quantity ");
+								echo "<li><i>" . $product->product_description . "</i></li><br>"; 
+							    echo "<li><h3>$" . $product->product_selling_price . "</h3></li>"; 
+							    echo "<br>";
+								echo "<li><small>&nbsp;&nbsp;" . form_label("Quantity ") . "</small>";
 								$name_data = array(
 									'name' => 'quantity',
 									'id' => 'quantity',
 									'type'=> 'number',
+									'class' => 'cart',
 									'value' => set_value('quantity','0'),
 									'min'=>'0',
 									'max'=>'10'
@@ -100,7 +106,7 @@
 								echo form_input($name_data)  . "</li>"; 		
 								echo "</ul>";
 								echo form_hidden('product_id', $product->product_id); 
-								echo form_submit('action', 'Add to Cart'); 
+								echo "<center>" . form_submit('action', 'Add to Cart', "class='cart'") . "</center>"; 
 								echo form_close(); 	
 
 							?>
@@ -113,83 +119,15 @@
 				</div>
 			</div>
 		</div>
-
-
-			<ul>
-			<?php 
-			$count = 0;
-			foreach ($products as $product)
-			{
-			?>
-				<li>
-					<?php echo form_open('shop/add'); ?>
-					<div class="name"><?php echo $product->product_name; ?></div>
-					
-					<div class="thumb">
-					<?php 
-						$display = base_url() . "public/product/" . $product->product_id . ".jpg";
-						echo "<img src='" . $display . "'  alt ='Product Picture' width='100'/>";
-					?>			
-					</div>
-					
-					<div class="price">Description : <?php echo $product->product_description; ?></div>
-					
-					<div class="price">Price : $<?php echo $product->product_selling_price; ?></div>
-					
-					<div class="quantities">
-						
-						<?php echo form_label("Quantity") ?>
-						<?php
-						$name_data = array(
-							'name' => 'quantity',
-							'id' => 'quantity',
-							'type'=> 'number',
-							'value' => set_value('quantity','0'),
-							'min'=>'0',
-							'max'=>'10'
-						);	
-						?>
-						<?php echo form_input($name_data); ?>
-					
-					</div>
-					
-					<?php echo form_hidden('product_id', $product->product_id); ?>
-					<?php echo form_submit('action', 'Add to Cart'); ?>
-					<?php echo form_close(); 
-					?>
-				</li>
-			<?php 
-			} 
-			?>
-		</ul>
-	</div>
-
-	<?php if ($cart = $this->cart->contents()){ ?>
-	<div id="cart">
-		<table>
-		<caption>Shopping Cart</caption>
-		<thead>
-			<tr>
-				<th>Item Name</th>
-				<th>Quantity</th>
-				<th>Price</th>
-				<th></th>
-			</tr>
-		</thead>
-		<?php foreach ($cart as $item){ ?>
-			<tr>
-				<td><?php echo $item['name']; ?></td>
-				<td><?php echo $item['qty'];?></td>
-				<td>$<?php echo $item['subtotal']; ?></td>
-				<td class="remove">	<?php echo anchor('shop/remove/'.$item['rowid'],'X'); ?></td>
-			</tr>
-		<?php } ?>
-		<tr class="total">
-			<td colspan="3"><strong>Total</strong></td>
-			<td>$<?php echo $this->cart->total(); ?></td>
-		</tr>
-		</table>		
-	</div>
-	<?php } ?>
+		
+		<footer class="dark">
+			<div class="foot-wrapper">
+			<a href=""><img src="public/assets/icons/fb.png" alt=""></a>
+			<a href=""><img src="public/assets/icons/tw.png" alt=""></a>
+			<a href=""><img src="public/assets/icons/g.png" alt=""></a>
+			<a href=""><img src="public/assets/icons/insta.png" alt=""></a>
+			</div>
+		</footer>
+	
 </body>
 </html>

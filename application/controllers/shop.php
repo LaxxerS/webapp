@@ -70,6 +70,10 @@ class Shop extends CI_Controller {
 		
 	}
 
+	function cart() {
+		$this->load->view('view_cart');
+	}
+	
 	function checkout() {
 		$this->load->view('view_checkout');
 	}
