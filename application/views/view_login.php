@@ -3,14 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>E-Commerce | Login</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-        <link rel="stylesheet" href="public/assets/css/normalize.css">
-        <link rel="stylesheet" href="public/assets/css/style.css">
+        <link rel="stylesheet" href=<?php echo base_url() . "public/assets/css/normalize.css"; ?>>
+        <link rel="stylesheet" href=<?php echo base_url() . "public/assets/css/style.css"; ?>>
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 

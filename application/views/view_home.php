@@ -3,14 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>E-Commerce | Home</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-        <link rel="stylesheet" href="public/assets/css/normalize.css">
-        <link rel="stylesheet" href="public/assets/css/style.css">
+        <link rel="stylesheet" href=<?php echo base_url() . "public/assets/css/normalize.css"; ?>>
+        <link rel="stylesheet" href=<?php echo base_url() . "public/assets/css/style.css"; ?>>
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
@@ -34,9 +34,9 @@
 			<div class="inner-wrapper">
 				<span class="logo">Site Logo</span>
 				<ul class="pull-right">
-					<a href="#"><li>Home</li></a>
+					<a href="<?php echo base_url(); ?>"><li>Home</li></a>
 					<a href="<?php echo base_url() . "shop"; ?>"><li>Shop</li></a>
-					<a href="#"><li>About</li></a>
+					<a href="<?php echo base_url() . "about"; ?>"><li>About</li></a>
 					<?php 
 						$session = $this->session->userdata("loggedIn");
 						$username = $this->session->userdata("username");
@@ -71,7 +71,7 @@
 					<h1>TRUSTED QUALITY SURPLUS</h1>
 					<p>Designed & Manufactured in Malaysia</p>
 					<br/><br/>
-					<a href="#">Find out more</a>
+					<a href="<?php echo base_url() . "shop"; ?>">Find out more</a>
 					<br/><br/>
 				</div>
 
@@ -85,7 +85,7 @@
 					<a href=<?php echo base_url() . "shop"; ?> class="card">
 						<h1>SHOP</h1>
 					</a>
-					<a href=<?php echo base_url() . "#"; ?> class="card">
+					<a href=<?php echo base_url() . "about"; ?> class="card">
 						<h1>ABOUT</h1>
 					</a>
 					<a href=<?php echo base_url() . "register"; ?> class="card">
@@ -99,10 +99,10 @@
 
 		<footer class="dark">
 			<div class="foot-wrapper">
-			<a href=""><img src="public/assets/icons/fb.png" alt=""></a>
-			<a href=""><img src="public/assets/icons/tw.png" alt=""></a>
-			<a href=""><img src="public/assets/icons/g.png" alt=""></a>
-			<a href=""><img src="public/assets/icons/insta.png" alt=""></a>
+			<a href=""><img src=<?php echo base_url() . "public/assets/icons/fb.png"; ?> alt=""></a>
+			<a href=""><img src=<?php echo base_url() . "public/assets/icons/tw.png"; ?> alt=""></a>
+			<a href=""><img src=<?php echo base_url() . "public/assets/icons/g.png"; ?> alt=""></a>
+			<a href=""><img src=<?php echo base_url() . "public/assets/icons/insta.png"; ?> alt=""></a>
 			</div>
 		</footer>
 	

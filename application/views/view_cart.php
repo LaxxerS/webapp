@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>E-Commerce | Cart</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -35,7 +35,7 @@
                 <ul class="pull-right">
                     <a href="<?php echo base_url(); ?>"><li>Home</li></a>
                     <a href="<?php echo base_url() . "shop"; ?>"><li>Shop</li></a>
-                    <a href="#"><li>About</li></a>
+                    <a href="<?php echo base_url() . "about"; ?>"><li>About</li></a>
                     <?php 
                         $session = $this->session->userdata("loggedIn");
                         $username = $this->session->userdata("username");

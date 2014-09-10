@@ -77,6 +77,10 @@ hr {
 	color: #444444;
 }
 
+.navbar-head ul li a:visited {
+	color: #444444;
+}
+
 .navbar-head ul li a:hover li {
 	background: #0F090A; 
 	color: white;
@@ -598,4 +602,13 @@ input[type="submit"].checkout:hover {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: lighter;
 	font-size: 25px;
+}
+
+.link {
+	color: #444444;
+	text-decoration: none;
+}
+
+.link:hover {
+	color: black;
 }

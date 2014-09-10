@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-	<title>Shop</title>
+	<title>E-Commerce | Shop</title>
 	<meta charset="UTF-8">
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
@@ -30,7 +30,7 @@
 				<ul class="pull-right">
 					<a href="<?php echo base_url(); ?>"><li>Home</li></a>
 					<a href="<?php echo base_url() . "shop"; ?>"><li>Shop</li></a>
-					<a href="#"><li>About</li></a>
+					<a href="<?php echo base_url() . "about"; ?>"><li>About</li></a>
 					<?php 
 						$session = $this->session->userdata("loggedIn");
 						$username = $this->session->userdata("username");
@@ -126,10 +126,10 @@
 		
 		<footer class="dark">
 			<div class="foot-wrapper">
-			<a href=""><img src="public/assets/icons/fb.png" alt=""></a>
-			<a href=""><img src="public/assets/icons/tw.png" alt=""></a>
-			<a href=""><img src="public/assets/icons/g.png" alt=""></a>
-			<a href=""><img src="public/assets/icons/insta.png" alt=""></a>
+			<a href=""><img src=<?php echo base_url() . "public/assets/icons/fb.png"; ?> alt=""></a>
+			<a href=""><img src=<?php echo base_url() . "public/assets/icons/tw.png"; ?> alt=""></a>
+			<a href=""><img src=<?php echo base_url() . "public/assets/icons/g.png"; ?> alt=""></a>
+			<a href=""><img src=<?php echo base_url() . "public/assets/icons/insta.png"; ?> alt=""></a>
 			</div>
 		</footer>
 	
