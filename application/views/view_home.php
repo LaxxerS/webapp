@@ -37,15 +37,15 @@
 							echo '
 								<li>Account &#8897;
 									    <ul>
-									      <li><a href="' . base_url() . 'login">Sign in</a></li>
-									      <li><a href="' . base_url() . 'register">Register &raquo;</a></li>					  
+									      <a href="' . base_url() . 'login"><li>Sign in</li></a>
+									      <a href="' . base_url() . 'register"><li>Register &raquo;</li></a>					  
 									    </ul>
 								</li>
 								';							
 						} else {
 							echo '<li><a href="#">Welcome, ' . $username . ' &#8897</a>
 									<ul>
-									  <li><a href="'. base_url() . 'home/logout">Logout</a></li>
+									  <a href="'. base_url() . 'home/logout"><li>Logout</li></a>
 									</ul>
 								  </li>';
 						}
