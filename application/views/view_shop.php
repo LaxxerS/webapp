@@ -5,62 +5,117 @@
 	<meta charset="UTF-8">
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
-	
-	<style type="text/css">
-		body {
-			font: 13px Arial;
-		}
-		br{
-			line-height :0.65cm;
-		}
-		#products {
-			text-align: center;
-		}
-		#products ul {
-			list-style-type: none; margin: 0px;
-		}
-		#products li {
-			width: 150px; padding: 4px; margin: 8px;
-			border: 1px solid #ddd; background-color: #eee;
-			-moz-border-radius: 4px; -webkit-border-radius: 4px;
-			float: left;
-		}
-		#products .name {
-			font-size: 15px; margin: 5px;
-		}
-		#products .price {
-			margin: 5px;
-		}
-		#products .option {
-			margin: 5px;
-		}
-		
-		#cart {
-			padding: 4px; margin: 8px; float: left;
-			border: 1px solid #ddd; background-color: #eee;
-			-moz-border-radius: 4px; -webkit-border-radius: 4px;
-		}
-		#cart table {
-			width: 320px; border-collapse: collapse;
-			text-align: left;
-		}
-		#cart th {
-			border-bottom: 1px solid #aaa;			
-		}
-		#cart caption {
-			font-size: 15px; height: 30px; text-align: left;
-		}
-		#cart .total {
-			height: 40px;
-		}
-		#cart .remove a {
-			color: red;
-		} 
-	</style>
+	<link rel="stylesheet" href=<?php echo base_url() . "public/assets/css/normalize.css"; ?>>
+    <link rel="stylesheet" href=<?php echo base_url() . "public/assets/css/style.css"; ?>>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
-	<div id="products">
-		<ul>
+	<div class="wrapper">
+		<header class="navbar-cart">
+			<a href="#" class="cart pull-right"><i class="fa fa-shopping-cart"></i> Cart - 0 items | $0</a>
+		</header>
+
+		<nav class="navbar-head">
+			<div class="inner-wrapper">
+				<span class="logo">Site Logo</span>
+				<ul class="pull-right">
+					<a href="<?php echo base_url(); ?>"><li>Home</li></a>
+					<a href="<?php echo base_url() . "shop"; ?>"><li>Shop</li></a>
+					<a href="#"><li>About</li></a>
+					<?php 
+						$session = $this->session->userdata("loggedIn");
+						$username = $this->session->userdata("username");
+						if(empty($session)) {
+							echo '
+								<li>Account &#8897;
+									    <ul>
+									      <a href="' . base_url() . 'login"><li>Sign in</li></a>
+									      <a href="' . base_url() . 'register"><li>Register &raquo;</li></a>					  
+									    </ul>
+								</li>
+								';							
+						} else {
+							echo '<li><a href="#">Welcome, ' . $username . ' &#8897</a>
+									<ul>
+									  <a href="'. base_url() . 'home/logout"><li>Logout</li></a>
+									</ul>
+								  </li>';
+						}
+					?>
+				</ul>
+			</div>
+		</nav>
+	</div>	
+
+		<div class="preview">
+		</div>
+
+		<div class="wrapper">
+			<div class="inner-wrapper">
+				<div class="tagline">
+					<h1>TRUSTED QUALITY SURPLUS</h1>
+					<p>Designed & Manufactured in Malaysia</p>
+					<br/><br/>
+					<a href="#">Find out more</a>
+					<br/><br/>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="card-background">
+			<div class="wrapper max">
+				<div class="inner-wrapper light">
+				<?php 
+					$count = 0;
+					foreach ($products as $product)
+					{
+				?>					
+					<div class="product-list">
+						<?php echo form_open('shop/add'); ?>
+						<div class="preview-img ">
+						<?php 
+							$display = base_url() . "public/product/" . $product->product_id . ".jpg";
+							echo "<img src='" . $display . "'  alt ='Product Picture' width='100%'/>";
+						?>								
+						</div>
+
+						<div class="product-meta">
+							<?php 
+								echo "<ul>";
+								echo "<center><h3>" . $product->product_name . "</h3></center><hr>"; 
+								echo "<li>" . $product->product_description . "</li>"; 
+							    echo "<li>$" . $product->product_selling_price . "</li>"; 
+								echo "<li>" . form_label("Quantity ");
+								$name_data = array(
+									'name' => 'quantity',
+									'id' => 'quantity',
+									'type'=> 'number',
+									'value' => set_value('quantity','0'),
+									'min'=>'0',
+									'max'=>'10'
+								);	
+								echo form_input($name_data)  . "</li>"; 		
+								echo "</ul>";
+								echo form_hidden('product_id', $product->product_id); 
+								echo form_submit('action', 'Add to Cart'); 
+								echo form_close(); 	
+
+							?>
+									    
+						</div>
+					</div>
+				<?php 
+					} 
+				?>					
+				</div>
+			</div>
+		</div>
+
+
+			<ul>
 			<?php 
 			$count = 0;
 			foreach ($products as $product)
