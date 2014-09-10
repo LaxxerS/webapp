@@ -33,11 +33,12 @@
     	</div>
 
     	<ul>
-    		
+    		<a href=<?php echo base_url() . "admin/view"; ?>><li class="active-inner"><i class="fa  fa-star fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Total Sales</li></a>
+    		<a href=<?php echo base_url() . "admin/add"; ?>><li><i class="fa fa-money fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Nett Profit</li></a>   		
 		</ul>
     </nav>
 <div class="admin-contents">
-	summary
+	
 	
 </div>
 

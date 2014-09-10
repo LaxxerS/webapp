@@ -38,5 +38,9 @@ class Shop extends CI_Controller {
 		redirect('shop');
 		
 	}
+
+	function checkout() {
+		$this->load->view('view_checkout');
+	}
 	
 }
