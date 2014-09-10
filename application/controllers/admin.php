@@ -163,10 +163,29 @@ class Admin extends CI_Controller {
 		$this->model_admin->delete_product();
 	}
 	
-	public function saleSummary()
+	public function totalSales()
 	{	
-		echo "coming soon";
-		// $this->load->view('');
+		$this->load->model('model_admin');
+		
+		if($query = $this->model_admin->getCheckout())
+		{
+			$data['records'] = $query;
+		}
+		
+		$this->load->view('view_admin_dashboard', $data);
+	
+	}
+	
+	public function nettProfit()
+	{	
+		$this->load->model('model_admin');
+		
+		if($query = $this->model_admin->getCheckout())
+		{
+			$data['records'] = $query;
+		}
+		
+		$this->load->view('view_admin_dashboard', $data);
 	}
 	
 }

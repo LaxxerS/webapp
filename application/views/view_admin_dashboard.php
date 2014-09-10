@@ -33,13 +33,40 @@
     	</div>
 
     	<ul>
-    		<a href=<?php echo base_url() . "admin/view"; ?>><li class="active-inner"><i class="fa  fa-star fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Total Sales</li></a>
-    		<a href=<?php echo base_url() . "admin/add"; ?>><li><i class="fa fa-money fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Nett Profit</li></a>   		
+    		<a href=<?php echo base_url() . "admin/totalSales"; ?>><li class="active-inner"><i class="fa  fa-star fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Total Sales</li></a>
+    		
+			
+			<a href=<?php echo base_url() . "admin/nettProfit"; ?>><li><i class="fa fa-money fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Nett Profit</li></a>   		
+			
 		</ul>
     </nav>
 <div class="admin-contents">
+<?php
 	
 	
+	if(current_url() == 'http://localhost/webapp/admin/totalSales')
+	{	
+		$total_sales = 0;
+		foreach($records as $row) { 
+			$total_sales += $row->total_selling_price;
+		}
+		echo '$' . $total_sales;
+	}
+?>
+
+<?php
+	
+	
+	if(current_url() == 'http://localhost/webapp/admin/nettProfit') 
+	{
+		$nett_profit = 0;
+		foreach($records as $row) { 
+			$nett_profit += $row->prouduct_cost_total;
+		}
+		echo '$' . $nett_profit;
+	}	
+?>
+
 </div>
 
 </body>

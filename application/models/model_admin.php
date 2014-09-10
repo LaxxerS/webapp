@@ -42,6 +42,12 @@ class Model_admin extends CI_Model {
 		return $query->result();
 	}
 	
+	function getCheckout()
+	{
+		$query = $this->db->get('checkout_info');
+		return $query->result();
+	}
+	
 	function delete_product()
 	{
 		$this->db->where('product_id', $this->uri->segment(3));
