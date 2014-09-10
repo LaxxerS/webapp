@@ -69,8 +69,8 @@ class Admin extends CI_Controller {
 	public function addProduct() 
 	{
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('product_name', 'Name', 'trim|required|alpha');
-		$this->form_validation->set_rules('product_description', 'Description', 'trim|required|alpha_numeric');
+		$this->form_validation->set_rules('product_name', 'Name', 'trim|required|name_space');
+		$this->form_validation->set_rules('product_description', 'Description', 'trim|required|name_space');
 		$this->form_validation->set_rules('product_cost_price', 'Cost Price', 'trim|required|decimal');
 		$this->form_validation->set_rules('product_selling_price', 'Selling Price', 'trim|required|decimal');
 		$this->form_validation->set_rules('product_quantity', 'Quantity', 'trim|required|numeric');
@@ -110,8 +110,8 @@ class Admin extends CI_Controller {
 	public function update()
 	{
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('product_name', 'Name', 'trim|required|alpha');
-		$this->form_validation->set_rules('product_description', 'Description', 'trim|required|alpha_numeric');
+		$this->form_validation->set_rules('product_name', 'Name', 'trim|required|name_space');
+		$this->form_validation->set_rules('product_description', 'Description', 'trim|required|name_space');
 		$this->form_validation->set_rules('product_cost_price', 'Cost Price', 'trim|required|decimal');
 		$this->form_validation->set_rules('product_selling_price', 'Selling Price', 'trim|required|decimal');
 		$this->form_validation->set_rules('product_quantity', 'Quantity', 'trim|required|numeric');
