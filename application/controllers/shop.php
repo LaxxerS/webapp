@@ -78,4 +78,24 @@ class Shop extends CI_Controller {
 		$this->load->view('view_checkout');
 	}
 	
+	function addCheckout() {
+	
+		$new_checkout_info = array(
+			'first_name' =>  $this->input->post('first_name'),
+			'last_name' =>  $this->input->post('last_name'),
+			'email' =>  $this->input->post('email'),			
+			'address' =>  $this->input->post('address'),			
+			'country' =>  $this->input->post('country'),			
+			'city' =>  $this->input->post('city'),			
+			'state' =>  $this->input->post('state'),			
+			'zip_postal' =>  $this->input->post('zip_postal'),			
+			'phone' =>  $this->input->post('phone'),
+			'shipping' =>  $this->input->post('shipping'),
+		);
+
+		$insert = $this->db->insert('checkout_info', $new_checkout_info);
+		return $insert;
+	}
+	
+	
 }

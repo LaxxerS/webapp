@@ -26,12 +26,9 @@
                 <h3>Billing Info</h3>
                 <center>
 				<?php 
-					$username = $this->session->userdata("username") ."<br>";
-					// echo $this->session->userdata("first_name") ."<br>";
-					// echo $this->session->userdata("last_name") ."<br>";
-					// echo $this->session->userdata("phone") ."<br>";
-
-					$sql = mysql_query("SELECT * FROM users WHERE username='$username'");
+					$userid = $this->session->userdata("user_id") ."<br>";
+					
+					$sql = mysql_query("SELECT * FROM users WHERE user_id='$userid'");
 					
 					if($sql === FALSE) {
 						die(mysql_error()); 
@@ -39,24 +36,24 @@
 					
 					while($row = mysql_fetch_array($sql))
 					{
-						echo $first_name = $row["first_name"];
-						echo $last_name = $row["last_name"];
-						echo $email = $row["email_address"];
+						$first_name = $row["first_name"];
+						$last_name = $row["last_name"];
+						$email = $row["email_address"];
+						$phone = $row["phone"];
 					}
-					// echo $first_name;
 				?>
 				
-                <form action="#">
-                <input type="text" placeholder="First Name" class="checkout" value=""/>
-                <input type="text" placeholder="Last Name" class="checkout" value=""/>
-                <input type="email" placeholder="Email" class="checkout" value=""/>
-                <input type="text" placeholder="Address" class="checkout" />
-                <input type="text" placeholder="Country" class="checkout"/>
-                <input type="text" placeholder="City" class="checkout"/>
-                <input type="text" placeholder="State" class="checkout"/>
-                <input type="text" placeholder="Zip / Postal" class="checkout"/>
-                <input type="text" placeholder="Phone Number" class="checkout"/>
-                </form>                    
+                <form action="<?php echo base_url().'shop/addCheckout'; ?>" method="post">
+                <input type="text" placeholder="First Name" name="first_name" class="checkout" value="<?php echo $first_name;?>"/>
+                <input type="text" placeholder="Last Name" name="last_name" class="checkout" value="<?php echo $last_name;?>"/>
+                <input type="email" placeholder="Email" name="email" class="checkout" value="<?php echo $email;?>"/>
+                <input type="text" placeholder="Address" name="address" class="checkout" />
+                <input type="text" placeholder="Country" name="country" class="checkout"/>
+                <input type="text" placeholder="City" name="city" class="checkout"/>
+                <input type="text" placeholder="State" name="state" class="checkout"/>
+                <input type="text" placeholder="Zip / Postal" name="zip_post" class="checkout"/>
+                <input type="text" placeholder="Phone Number" name="phone" class="checkout" value="<?php echo $phone;?>"/>
+              
                 </center>
 
             </div>
@@ -107,12 +104,12 @@
                 <h3>Shipping Method</h3>
                 <p>Please select a shipping method before proceeding to payment.</p>
                 <center>
-                <select>
+                <select name="shipping">
                     <option value="ship">Shipping Address same as Billing</option>
                     <option value="cod">Cash on Delivery</option>
                 </select>       
                 <br><br>
-                <input type="submit" value="Checkout" class="checkout">
+					<input type="submit" value="Checkout" class="checkout"></form> 
                 </center>
 
             </div>
