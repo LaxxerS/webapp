@@ -42,11 +42,22 @@ class Admin extends CI_Controller {
 	
 	function error_pic($msg = NULL) {
 		$data['msg'] = $msg;
-		$this->load->view('view_admin_dashboard', $data);
+		$this->load->view('view_admin_add', $data);
 	}
 	
 	public function view($msg = NULL) {
-        $data['msg'] = $msg;
+		$this->load->model('model_admin');
+		
+		if($query = $this->model_admin->getALL())
+		{
+			$data['records'] = $query;
+		}
+		
+		if($count = $this->model_admin->count_product())
+		{
+			$data['product_no'] = $count['num_rows'];
+		}
+		
 		$this->load->view('view_admin_product', $data);
 	}
 
@@ -67,7 +78,7 @@ class Admin extends CI_Controller {
 		if($this->form_validation->run() == FALSE)
 		{
 			$data['msg'] = NULL;
-			$this->load->view('view_admin_add',$data);
+			$this->load->view('view_admin_add', $data);
 		}
 		else
 		{			
@@ -87,8 +98,7 @@ class Admin extends CI_Controller {
 			{
 				$this->model_admin->add_product();
 				$data = array('upload_data' => $this->upload->data());
-				echo "Succesfully Added A Product <br>";
-				echo anchor('admin', 'Back');
+				redirect('admin/view');
 			}
 			else
 			{
@@ -97,24 +107,7 @@ class Admin extends CI_Controller {
 		}
 	}
 	
-	public function viewProduct()
-	{
-		$this->load->model('model_admin');
-		
-		if($query = $this->model_admin->getALL())
-		{
-			$data['records'] = $query;
-		}
-		
-		if($count = $this->model_admin->count_product())
-		{
-			$data['product_no'] = $count['num_rows'];
-		}
-		
-		$this->load->view('view_product', $data);
-	}
-	
-	public function updateProduct()
+	public function update()
 	{
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('product_name', 'Name', 'trim|required|alpha');
@@ -145,16 +138,16 @@ class Admin extends CI_Controller {
 			if( $this->upload->do_upload() && $this->model_admin->update_product() )
 			{
 				$data = array('upload_data' => $this->upload->data());
-				redirect('admin/viewProduct');
+				redirect('admin/view');
 			}
 			else if($this->model_admin->update_product())
 			{
-				redirect('admin/viewProduct');
+				redirect('admin/view');
 			}
 			else if($this->upload->do_upload())
 			{
 				$data = array('upload_data' => $this->upload->data());
-				redirect('admin/viewProduct');
+				redirect('admin/view');
 			}
 			else
 			{
@@ -164,7 +157,7 @@ class Admin extends CI_Controller {
 		}
 	}
 	
-	function deleteProduct()
+	function delete()
 	{
 		$this->load->model('model_admin');
 		$this->model_admin->delete_product();

@@ -46,7 +46,7 @@ class Model_admin extends CI_Model {
 	{
 		$this->db->where('product_id', $this->uri->segment(3));
 		$this->db->delete('products');
-		redirect('admin/viewProduct');
+		redirect('admin/view');
 	}
 	
 	function count_product()

@@ -9,8 +9,8 @@
 
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-        <link rel="stylesheet" href="public/assets/css/normalize.css">
-        <link rel="stylesheet" href="public/assets/css/admin-ui.css">
+        <link rel="stylesheet" href=<?php echo base_url() . "public/assets/css/normalize.css"; ?>>
+        <link rel="stylesheet" href=<?php echo base_url() . "public/assets/css/admin-ui.css"; ?>>
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
@@ -18,11 +18,11 @@
 
     <nav class="sidebar-outer">
     	<ul>
-    		<li><a href="./"><i class="fa fa-home fa-2x"></i></a>
-    		<li><a href="admin"><i class="fa fa-line-chart fa-2x active"></i></a>
-    		<li><a href="admin/view"><i class="fa fa-shopping-cart fa-2x"></i></li></a>
+    		<li><a href=<?php echo base_url(); ?>><i class="fa fa-home fa-2x"></i></a>
+    		<li><a href=<?php echo base_url() . "admin"; ?>><i class="fa fa-line-chart fa-2x active"></i></a>
+    		<li><a href=<?php echo base_url() . "admin/view"; ?>><i class="fa fa-shopping-cart fa-2x"></i></li></a>
     		<li><a href="#"><i class="fa fa-usd fa-2x"></i></li></a>
-    		<li><a href="home/logout"><i class="fa fa-sign-out fa-2x"></i></li></a>
+    		<li><a href=<?php echo base_url() . "home/logout"; ?>><i class="fa fa-sign-out fa-2x"></i></li></a>
     	</ul>
     </nav>
 

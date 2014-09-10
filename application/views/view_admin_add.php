@@ -9,8 +9,8 @@
 
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-        <link rel="stylesheet" href="../public/assets/css/normalize.css">
-        <link rel="stylesheet" href="../public/assets/css/admin-ui.css">
+        <link rel="stylesheet" href=<?php echo base_url() . "public/assets/css/normalize.css"; ?>>
+        <link rel="stylesheet" href=<?php echo base_url() . "public/assets/css/admin-ui.css"; ?>>
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
@@ -18,11 +18,11 @@
 
     <nav class="sidebar-outer">
     	<ul>
-    		<li><a href="../"><i class="fa fa-home fa-2x"></i></a>
-    		<li><a href="../admin"><i class="fa fa-line-chart fa-2x"></i></a>
-    		<li><a href="#"><i class="fa fa-shopping-cart fa-2x active"></i></li></a>
+    		<li><a href=<?php echo base_url(); ?>><i class="fa fa-home fa-2x"></i></a>
+    		<li><a href=<?php echo base_url() . "admin"; ?>><i class="fa fa-line-chart fa-2x"></i></a>
+    		<li><a href=<?php echo base_url() . "admin/view"; ?>><i class="fa fa-shopping-cart fa-2x active"></i></li></a>
     		<li><a href="#"><i class="fa fa-usd fa-2x"></i></li></a>
-    		<li><a href="../home/logout"><i class="fa fa-sign-out fa-2x"></i></li></a>
+    		<li><a href=<?php echo base_url() . "home/logout"; ?>><i class="fa fa-sign-out fa-2x"></i></li></a>
     	</ul>
     </nav>
 
@@ -33,14 +33,14 @@
     	</div>
 
     	<ul>
-    		<a href="view"><li><i class="fa fa-database fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Product</li></a>
-    		<a href="add"><li class="active-inner"><i class="fa fa-plus fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Add Product</li></a>
-    		<a href="#"><li><i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Update Product</li></a>
+    		<a href=<?php echo base_url() . "admin/view"; ?>><li><i class="fa fa-database fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Product</li></a>
+    		<a href=<?php echo base_url() . "admin/add"; ?>><li class="active-inner"><i class="fa fa-plus fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Add Product</li></a>
+    		<a href=<?php echo base_url() . "admin/view"; ?>><li><i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Update Product</li></a>
 		</ul>
     </nav>
 <div class="admin-contents">
 	<span class="title">Add Product</span>
-	<p>Lorem ipsum</p>
+	<p>You may put up an item for sale by provding the follow details. Don't forget to provide a preview image.</p>
 
 		<?php	
 			echo '<div class="image-preview">';	
@@ -75,9 +75,9 @@
 			echo '<br>';
 			echo form_textarea(array('name' => 'product_description', 'value' => set_value('product_description'), 'rows' => '10','placeholder' => 'Product Description', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'required' => 'required'));
 			echo '<br>';
-			echo form_input(array('name' => 'product_cost_price', 'value' => set_value('product_cost_price'), 'placeholder' => 'Cost Price', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'required' => 'required'));
+			echo form_input(array('name' => 'product_cost_price', 'value' => set_value('product_cost_price'), 'placeholder' => 'Cost Price | 2 decimals', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'required' => 'required'));
 			echo '<br>';
-			echo form_input(array('name' => 'product_selling_price', 'value' => set_value('product_selling_price'), 'placeholder' => 'Selling Price', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'required' => 'required'));
+			echo form_input(array('name' => 'product_selling_price', 'value' => set_value('product_selling_price'), 'placeholder' => 'Selling Price | 2 decimals', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'required' => 'required'));
 			echo '<br>';
 			echo form_input(array('name' => 'product_quantity', 'value' => set_value('product_quantity'), 'placeholder' => 'Quantity', 'autocapitalize' => 'off', 'autocomplete'=> 'off', 'spellcheck'=> 'false', 'required' => 'required'));
 			echo '<br>';
