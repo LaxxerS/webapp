@@ -72,6 +72,26 @@
 						<td><?php echo $item['name']; ?></td>
 						<td><?php echo $item['qty'];?></td>
 						<td>$<?php echo $item['subtotal']; ?></td>
+						
+						<?php 
+							$product_id = $item['id'];
+							
+							$sql = mysql_query("SELECT * FROM products WHERE product_id='$product_id'");
+							
+							if($sql === FALSE) {
+								die(mysql_error()); 
+							}
+							
+							while($row = mysql_fetch_array($sql))
+							{
+								$product_cost_price = $row["product_cost_price"];
+							}
+							$real_cost = $item['qty'] * $product_cost_price;
+							$prouduct_cost_total += $real_cost;
+							// echo $prouduct_cost_total;
+						?>
+						
+						<input type="hidden" name="prouduct_cost_total" class="checkout" value="<?php ?>"/>
 					</tr>
 					<?php } ?>
 					<tr> <td colspan="4">&nbsp;</td> </tr>
