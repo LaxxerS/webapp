@@ -37,7 +37,27 @@ class Admin extends CI_Controller {
 	public function index($msg = NULL) 
 	{
 		$data['msg'] = $msg;
-		$this->load->view('view_admin_dashboard', $data);
+
+		$this->load->model('model_admin');
+		
+		if($query = $this->model_admin->getCheckout())
+		{
+			$data['records'] = $query;
+		}
+		
+		$this->load->view('view_admin_dashboard', $data);		
+	}
+
+	public function nett() {
+	
+		$this->load->model('model_admin');
+		
+		if($query = $this->model_admin->getCheckout())
+		{
+			$data['records'] = $query;
+		}
+		
+		$this->load->view('view_admin_nett', $data);	
 	}
 	
 	function error_pic($msg = NULL) {

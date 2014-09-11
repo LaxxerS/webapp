@@ -21,7 +21,6 @@
     		<li><a href=<?php echo base_url(); ?>><i class="fa fa-home fa-2x"></i></a>
     		<li><a href=<?php echo base_url() . "admin"; ?>><i class="fa fa-line-chart fa-2x active"></i></a>
     		<li><a href=<?php echo base_url() . "admin/view"; ?>><i class="fa fa-shopping-cart fa-2x"></i></li></a>
-    		<li><a href="#"><i class="fa fa-usd fa-2x"></i></li></a>
     		<li><a href=<?php echo base_url() . "home/logout"; ?>><i class="fa fa-sign-out fa-2x"></i></li></a>
     	</ul>
     </nav>
@@ -33,40 +32,44 @@
     	</div>
 
     	<ul>
-    		<a href=<?php echo base_url() . "admin/totalSales"; ?>><li class="active-inner"><i class="fa  fa-star fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Total Sales</li></a>
+    		<a href=<?php echo base_url() . "admin"; ?>><li class="active-inner"><i class="fa  fa-star fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Total Sales</li></a>
     		
 			
-			<a href=<?php echo base_url() . "admin/nettProfit"; ?>><li><i class="fa fa-money fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Nett Profit</li></a>   		
+			<a href=<?php echo base_url() . "admin/nett"; ?>><li><i class="fa fa-money fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Nett Profit</li></a>   		
 			
 		</ul>
     </nav>
 <div class="admin-contents">
-<?php
-	
-	
-	if(current_url() == 'http://localhost/webapp/admin/totalSales')
-	{	
-		$total_sales = 0;
-		foreach($records as $row) { 
-			$total_sales += $row->total_selling_price;
-		}
-		echo '$' . $total_sales;
-	}
-?>
+    <span class="title">Sales Summary</span>
+    <p>This section allows you to have an insight on the total sales summary.</p>
+    <br><br>
 
-<?php
-	
-	
-	if(current_url() == 'http://localhost/webapp/admin/nettProfit') 
-	{
-		$nett_profit = 0;
-		foreach($records as $row) { 
-			$nett_profit += $row->prouduct_cost_total;
-		}
-		echo '$' . $nett_profit;
-	}	
-?>
+     <table style="width:100%;">
+        <tr style="width: 50%;">
+            <td style="width: 50%;"><small>Checkout ID</small></td>
+            <td><small>Cost Price</small></td>
+            <td><small>Selling Price</small></td>
+        </tr>
+        <?php $total_sales = 0; ?>
+    <?php foreach ($records as $row){ ?>
+            <tr>
+                <td><?php echo $row->checkout_id; ?></td>
+                <td>$<?php echo $row->prouduct_cost_total; ?></td>
+                <td>$<?php echo $row->total_selling_price; ?></td>
+            </tr>
+            <?php $total_sales += $row->total_selling_price; ?>
+    <?php } ?>
+    <tr> <td colspan="3">&nbsp;</td> </tr>
 
+            </tr>
+            <tr style="border-bottom: 1px solid #E0E0E0;"><td colspan="4">&nbsp;</td> </tr>
+            <tr><td colspan="3">&nbsp;</td> </tr>
+            <tr>
+                <td></td>
+                <td><h2>TOTAL SALES:</h2></td>
+                <td><h2>$<?php echo $total_sales ?></h2></td>
+            </tr>
+            </table>
 </div>
 
 </body>

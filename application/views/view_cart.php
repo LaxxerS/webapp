@@ -117,7 +117,7 @@
                     <tr>
                         <td></td>
                         <td><h2>GRAND TOTAL:</h2></td>
-                        <td><h2><td>$<?php echo $this->cart->total(); ?></td></h2></td>
+                        <td><h2>$<?php echo $this->cart->total(); ?></h2></td>
                     </tr>
                     </table>
 

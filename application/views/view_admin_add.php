@@ -21,7 +21,6 @@
     		<li><a href=<?php echo base_url(); ?>><i class="fa fa-home fa-2x"></i></a>
     		<li><a href=<?php echo base_url() . "admin"; ?>><i class="fa fa-line-chart fa-2x"></i></a>
     		<li><a href=<?php echo base_url() . "admin/view"; ?>><i class="fa fa-shopping-cart fa-2x active"></i></li></a>
-    		<li><a href="#"><i class="fa fa-usd fa-2x"></i></li></a>
     		<li><a href=<?php echo base_url() . "home/logout"; ?>><i class="fa fa-sign-out fa-2x"></i></li></a>
     	</ul>
     </nav>
